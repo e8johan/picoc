@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -pedantic -g -DUNIX_HOST -DVER=\"`svnversion -n`\"
+CFLAGS=-Wall -pedantic -g -DUNIX_HOST -DVER=\"`git log --oneline -n 1 | sed 's/\ .*//'``git status --porcelain | grep '^\ M' > /dev/null && echo -n M`\"
 LIBS=-lm -lreadline
 
 TARGET	= picoc
